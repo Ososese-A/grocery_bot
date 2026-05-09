@@ -1,0 +1,15 @@
+install/
+build/
+log/
+
+__pycache__
+*.pyc
+.pytest_cache/
+
+.env
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
