@@ -32,11 +32,11 @@ HTML_PAGE = """
 </html>
 """
 
-app.route("/")
+@app.route("/")
 def home():
     return render_template_string(HTML_PAGE)
 
-app.route("/order", methods=['POST'])
+@app.route("/order", methods=['POST'])
 def order():
     ros_node.send_order("Milk, Bread, Eggs")
     return "<h1> Order Sent to Robot!<h1><a href='/'>Go Back</a>"
@@ -46,7 +46,7 @@ def main():
     rclpy.init()
     ros_node = WebBridge()
 
-    threading.Thread(target=lambda: app.run(host='0.0.0.0', port=5000, debugg=False, use_reloader=False)).start()
+    threading.Thread(target=lambda: app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)).start()
 
     rclpy.spin(ros_node)
     ros_node.destroy_node()
