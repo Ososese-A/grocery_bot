@@ -27,6 +27,7 @@ setup(
             'web_app = my_robot_store.web_bridge:main',
             'interaction = my_robot_store.interaction_sim:main',
             'vision = my_robot_store.vision:main',
+            'navigate = my_robot_store.navigation:main',
         ],
     },
 )
