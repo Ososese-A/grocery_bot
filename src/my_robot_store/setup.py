@@ -1,3 +1,5 @@
+import os
+from glob import glob
 from setuptools import find_packages, setup
 
 package_name = 'my_robot_store'
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'images'), glob('images/*.jpeg')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -22,6 +25,7 @@ setup(
         'console_scripts': [
             'manager = my_robot_store.task_manager:main',
             'web_app = my_robot_store.web_bridge:main',
+            'vision = my_robot_store.vision:main'
         ],
     },
 )
