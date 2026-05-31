@@ -25,7 +25,8 @@ setup(
         'console_scripts': [
             'manager = my_robot_store.task_manager:main',
             'web_app = my_robot_store.web_bridge:main',
-            'vision = my_robot_store.vision:main'
+            'interaction = my_robot_store.interaction_sim:main',
+            'vision = my_robot_store.vision:main',
         ],
     },
 )
