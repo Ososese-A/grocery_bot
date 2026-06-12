@@ -24,8 +24,8 @@ HTML_PAGE = """
     <body>
         <h1></h1>
         <form action="/order" method="post">
-            <button name="items" value="Milk, Bread, Eggs" type="submit" style="padding:20px; font-size:20px">
-                Order: Milk, Bread, Eggs
+            <button name="items" value="Apple, Banana, Bottle, Cake" type="submit" style="padding:20px; font-size:20px">
+                Order: Apple, Banana, Bottle, Cake
             </button>
         </form>
     </body>
@@ -38,7 +38,7 @@ def home():
 
 @app.route("/order", methods=['POST'])
 def order():
-    ros_node.send_order("Milk, Bread, Eggs")
+    ros_node.send_order("Apple, Banana, Bottle, Cake")
     return "<h1> Order Sent to Robot!<h1><a href='/'>Go Back</a>"
 
 def main():

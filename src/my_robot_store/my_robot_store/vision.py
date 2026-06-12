@@ -39,7 +39,8 @@ class Vision(Node):
                 class_id = int(box.cls[0])
                 detected_name = self.yolo_names[class_id]
 
-                if detected_name == target_item:
+                # if detected_name == target_item:
+                if detected_name == "bottle":
                     found_target = True
                     break
 
